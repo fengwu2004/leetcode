@@ -27,11 +27,6 @@ class WordSearch {
       return nil
     }
     
-    if board[row][coloum] == "0" {
-      
-      return nil
-    }
-    
     return board[row][coloum]
   }
   
@@ -148,5 +143,238 @@ class WordSearch {
     }
     
     return false
+  }
+
+  func sortedArrayToBST_Helper(_ nums:inout [Int], start:Int, end:Int) -> TreeNode? {
+    
+    if start > end {
+      
+      return nil
+    }
+    
+    let middle = (start + end)/2
+    
+    let node = TreeNode(nums[middle])
+    
+    node.left = sortedArrayToBST_Helper(&nums, start: start, end: middle - 1)
+    
+    node.right = sortedArrayToBST_Helper(&nums, start: middle + 1, end: end)
+    
+    return node
+  }
+  
+  func sortedArrayToBST(_ nums: [Int]) -> TreeNode? {
+    
+    if nums.isEmpty {
+      
+      return nil
+    }
+    
+    var arrays = nums
+    
+    let root = sortedArrayToBST_Helper(&arrays, start: 0, end: nums.count - 1)
+    
+    return root
+  }
+  
+  let tels:[String] = ["abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"]
+  
+  let digitdic:[Character:Int] = ["2":0, "3":1, "4":2, "5":3, "6":4, "7":5, "8":6, "9":7]
+  
+  func letterCombinations(_ digits: String) -> [String] {
+    
+    if digits.isEmpty {
+      
+      return []
+    }
+  
+    var temp = digits
+    
+    let digit = temp.removeFirst()
+    
+    guard let num = digitdic[digit], num >= 0, num <= 7 else {
+      
+      return []
+    }
+    
+    let words = letterCombinations(temp)
+    
+    var results:[String] = []
+    
+    for telchar in tels[num] {
+    
+      if words.isEmpty {
+        
+        results.append(String(telchar))
+      }
+      else {
+        
+        for word in words {
+          
+          results.append(String(telchar) + word)
+        }
+      }
+    }
+    
+    return results
+  }
+  
+  func dogenerateParenthesis(left:Int, right:Int) -> [String] {
+    
+    if left > right {
+      
+      return []
+    }
+    
+    if left == 0 {
+      
+      return [String(repeating: ")", count: right)];
+    }
+    
+    var words = dogenerateParenthesis(left: left - 1, right: right)
+    
+    var results:[String] = []
+    
+    for word in words {
+      
+      results.append(String("(") + word)
+    }
+    
+    if left < right {
+      
+      words = dogenerateParenthesis(left: left, right: right - 1)
+      
+      for word in words {
+        
+        results.append(String(")") + word)
+      }
+    }
+    
+    return results
+  }
+  
+  func generateParenthesis(_ n: Int) -> [String] {
+   
+    return dogenerateParenthesis(left: n, right: n)
+  }
+  
+  func subsets_iterate(_ nums: [Int]) -> [[Int]] {
+    
+    if nums.isEmpty {
+      
+      return []
+    }
+    
+    var temps:[[Int]] = [[]]
+    
+    var result = temps
+    
+    for num in nums {
+      
+      result = temps
+      
+      for item in result {
+        
+        var temp = item
+        
+        temp.append(num)
+        
+        temps.append(temp)
+      }
+    }
+    
+    return temps
+  }
+  
+  func subsets(_ nums: [Int]) -> [[Int]] {
+    
+    if nums.isEmpty {
+      
+      return []
+    }
+    
+    let first = nums[0]
+    
+    let items = subsets(Array(nums[1...]))
+    
+    var results = Array(items)
+    
+    for item in items {
+      
+      var temp = item
+      
+      temp.append(first)
+      
+      results.append(temp)
+    }
+    
+    return results
+  }
+  
+  func isPartitionAfter(_ s:String, added:String) -> Bool {
+    
+    let newStr = added + s
+    
+    let tempStr = String(newStr.reversed())
+    
+    return newStr == tempStr
+  }
+  
+  func partition(_ s: String) -> [[String]] {
+    
+    if s.isEmpty {
+      
+      return []
+    }
+    
+    if s.count == 1 {
+      
+      return [[s]]
+    }
+    
+    let first = String(s.first!)
+    
+    let startIndex = String.Index.init(encodedOffset: 1)
+    
+    let subs = partition(String(s[startIndex...]))
+    
+    var results:[[String]] = []
+    
+    for sub in subs {
+      
+      var temp = sub
+      
+      temp.insert(first, at: 0)
+      
+      results.append(temp)
+      
+      if isPartitionAfter(sub[0], added: first) {
+        
+        temp = sub
+        
+        temp[0] = first + sub[0]
+        
+        results.append(temp)
+      }
+      
+      if sub.count > 1 {
+        
+        if !isPartitionAfter(sub[0], added: sub[1]) {
+          
+          if isPartitionAfter(sub[0] + sub[1], added: first) {
+            
+            temp = sub
+            
+            temp.removeFirst()
+            
+            temp[0] = first + sub[0] + sub[1]
+            
+            results.append(temp)
+          }
+        }
+      }
+    }
+    
+    return results
   }
 }

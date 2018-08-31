@@ -14,6 +14,9 @@
 		2C61A4E621329A1800CE69A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C61A4E421329A1800CE69A2 /* LaunchScreen.storyboard */; };
 		2C61A4EE2132AA5800CE69A2 /* Permute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C61A4ED2132AA5800CE69A2 /* Permute.swift */; };
 		2C61A4F2213412E400CE69A2 /* WordSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C61A4F1213412E400CE69A2 /* WordSearch.swift */; };
+		2C61A4F421342B0F00CE69A2 /* Subsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C61A4F321342B0F00CE69A2 /* Subsets.swift */; };
+		2C61A51E21356EA700CE69A2 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C61A51D21356EA700CE69A2 /* Tree.swift */; };
+		2C8AC7F42139120300F35742 /* Trie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8AC7F32139120300F35742 /* Trie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		2C61A4E721329A1800CE69A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C61A4ED2132AA5800CE69A2 /* Permute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permute.swift; sourceTree = "<group>"; };
 		2C61A4F1213412E400CE69A2 /* WordSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSearch.swift; sourceTree = "<group>"; };
+		2C61A4F321342B0F00CE69A2 /* Subsets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subsets.swift; sourceTree = "<group>"; };
+		2C61A51D21356EA700CE69A2 /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
+		2C8AC7F32139120300F35742 /* Trie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,9 @@
 				2C61A4E721329A1800CE69A2 /* Info.plist */,
 				2C61A4ED2132AA5800CE69A2 /* Permute.swift */,
 				2C61A4F1213412E400CE69A2 /* WordSearch.swift */,
+				2C61A4F321342B0F00CE69A2 /* Subsets.swift */,
+				2C61A51D21356EA700CE69A2 /* Tree.swift */,
+				2C8AC7F32139120300F35742 /* Trie.swift */,
 			);
 			path = leetcode;
 			sourceTree = "<group>";
@@ -142,7 +151,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C61A4DE21329A1600CE69A2 /* ViewController.swift in Sources */,
+				2C61A4F421342B0F00CE69A2 /* Subsets.swift in Sources */,
 				2C61A4F2213412E400CE69A2 /* WordSearch.swift in Sources */,
+				2C8AC7F42139120300F35742 /* Trie.swift in Sources */,
+				2C61A51E21356EA700CE69A2 /* Tree.swift in Sources */,
 				2C61A4DC21329A1600CE69A2 /* AppDelegate.swift in Sources */,
 				2C61A4EE2132AA5800CE69A2 /* Permute.swift in Sources */,
 			);

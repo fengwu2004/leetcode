@@ -16,18 +16,14 @@ class ViewController: UIViewController {
     
     let solution = WordSearch()
     
-    let board:[[Character]] =
-      [
-        ["A","B","C","E"],
-        ["S","F","C","S"],
-        ["A","D","E","E"]
-    ]
+    let p = solution.partition("aab")
     
-    print(solution.exist(board, "ABCCED"))
+    print(p)
   }
   
   override func didReceiveMemoryWarning() {
     
     super.didReceiveMemoryWarning()
   }
+
 }
