@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C5763BB214255E0004A125D /* LinkList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C5763B921420C49004A125D /* LinkList.cpp */; };
+		2C5763BD2144B676004A125D /* Normal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5763BC2144B676004A125D /* Normal.swift */; };
+		2C57640D214A5BDC004A125D /* PriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C57640C214A5BDC004A125D /* PriorityQueue.swift */; };
 		2C61A4DC21329A1600CE69A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C61A4DB21329A1600CE69A2 /* AppDelegate.swift */; };
 		2C61A4DE21329A1600CE69A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C61A4DD21329A1600CE69A2 /* ViewController.swift */; };
 		2C61A4E121329A1600CE69A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C61A4DF21329A1600CE69A2 /* Main.storyboard */; };
@@ -16,10 +19,14 @@
 		2C61A4F2213412E400CE69A2 /* WordSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C61A4F1213412E400CE69A2 /* WordSearch.swift */; };
 		2C61A4F421342B0F00CE69A2 /* Subsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C61A4F321342B0F00CE69A2 /* Subsets.swift */; };
 		2C61A51E21356EA700CE69A2 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C61A51D21356EA700CE69A2 /* Tree.swift */; };
-		2C8AC7F42139120300F35742 /* Trie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8AC7F32139120300F35742 /* Trie.swift */; };
+		2C84FF34213BCE3600903F23 /* ArraySolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C84FF33213BCE3600903F23 /* ArraySolution.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C5763B821420C48004A125D /* leetcode-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "leetcode-Bridging-Header.h"; sourceTree = "<group>"; };
+		2C5763B921420C49004A125D /* LinkList.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LinkList.cpp; sourceTree = "<group>"; };
+		2C5763BC2144B676004A125D /* Normal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Normal.swift; sourceTree = "<group>"; };
+		2C57640C214A5BDC004A125D /* PriorityQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityQueue.swift; sourceTree = "<group>"; };
 		2C61A4D821329A1600CE69A2 /* leetcode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = leetcode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C61A4DB21329A1600CE69A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C61A4DD21329A1600CE69A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,6 +38,7 @@
 		2C61A4F1213412E400CE69A2 /* WordSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSearch.swift; sourceTree = "<group>"; };
 		2C61A4F321342B0F00CE69A2 /* Subsets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subsets.swift; sourceTree = "<group>"; };
 		2C61A51D21356EA700CE69A2 /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
+		2C84FF33213BCE3600903F23 /* ArraySolution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArraySolution.swift; sourceTree = "<group>"; };
 		2C8AC7F32139120300F35742 /* Trie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,6 +83,11 @@
 				2C61A4F321342B0F00CE69A2 /* Subsets.swift */,
 				2C61A51D21356EA700CE69A2 /* Tree.swift */,
 				2C8AC7F32139120300F35742 /* Trie.swift */,
+				2C84FF33213BCE3600903F23 /* ArraySolution.swift */,
+				2C5763B921420C49004A125D /* LinkList.cpp */,
+				2C5763B821420C48004A125D /* leetcode-Bridging-Header.h */,
+				2C5763BC2144B676004A125D /* Normal.swift */,
+				2C57640C214A5BDC004A125D /* PriorityQueue.swift */,
 			);
 			path = leetcode;
 			sourceTree = "<group>";
@@ -111,6 +124,7 @@
 				TargetAttributes = {
 					2C61A4D721329A1600CE69A2 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 				};
 			};
@@ -153,10 +167,13 @@
 				2C61A4DE21329A1600CE69A2 /* ViewController.swift in Sources */,
 				2C61A4F421342B0F00CE69A2 /* Subsets.swift in Sources */,
 				2C61A4F2213412E400CE69A2 /* WordSearch.swift in Sources */,
-				2C8AC7F42139120300F35742 /* Trie.swift in Sources */,
+				2C84FF34213BCE3600903F23 /* ArraySolution.swift in Sources */,
 				2C61A51E21356EA700CE69A2 /* Tree.swift in Sources */,
 				2C61A4DC21329A1600CE69A2 /* AppDelegate.swift in Sources */,
+				2C5763BD2144B676004A125D /* Normal.swift in Sources */,
+				2C57640D214A5BDC004A125D /* PriorityQueue.swift in Sources */,
 				2C61A4EE2132AA5800CE69A2 /* Permute.swift in Sources */,
+				2C5763BB214255E0004A125D /* LinkList.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +317,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6T39E5QM8Q;
 				INFOPLIST_FILE = leetcode/Info.plist;
@@ -309,6 +327,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yellfun.leetcode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "leetcode/leetcode-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -318,6 +338,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6T39E5QM8Q;
 				INFOPLIST_FILE = leetcode/Info.plist;
@@ -327,6 +348,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yellfun.leetcode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "leetcode/leetcode-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

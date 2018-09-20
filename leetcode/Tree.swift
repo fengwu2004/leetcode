@@ -241,4 +241,86 @@ class Solution_BST {
     
     return result
   }
+  
+  func inorder(_ root:TreeNode?, _ queue:Queue<Int>) -> Void {
+    
+    if root == nil {
+      
+      return
+    }
+    
+    inorder(root?.left, queue)
+    
+    queue.inQueue(root!.val)
+    
+    inorder(root?.right, queue)
+  }
+  
+  func kthSmallest(_ root: TreeNode?, _ k: Int) -> Int {
+   
+    guard root != nil else {
+      
+      return 0
+    }
+    
+    let queue = Queue<Int>()
+    
+    inorder(root, queue)
+    
+    var i = k
+    
+    while i > 1 {
+      
+      queue.outQueue()
+      
+      i -= 1
+    }
+    
+    return queue.outQueue()!
+  }
+  
+  func dfs(_ grid:inout[[Character]], _ row:Int, _ coloum:Int) -> Void {
+    
+    if row < 0 || row >= grid.count || coloum >= grid[0].count || coloum < 0 {
+      
+      return
+    }
+    
+    if grid[row][coloum] == "1" {
+      
+      grid[row][coloum] = "0"
+      
+      dfs(&grid, row, coloum + 1)
+      
+      dfs(&grid, row, coloum - 1)
+      
+      dfs(&grid, row + 1, coloum)
+      
+      dfs(&grid, row - 1, coloum)
+    }
+  }
+  
+  func numIslands(_ grid: [[Character]]) -> Int {
+  
+    var count = 0
+    
+    var tempgrid = grid
+    
+    for i in 0..<tempgrid.count {
+      
+      for j in 0..<tempgrid[0].count {
+        
+        if tempgrid[i][j] == "0" {
+          
+          continue
+        }
+        
+        count += 1
+        
+        dfs(&tempgrid, i, j)
+      }
+    }
+    
+    return count
+  }
 }

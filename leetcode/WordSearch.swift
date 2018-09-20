@@ -377,4 +377,121 @@ class WordSearch {
     
     return results
   }
+  
+  func isValid(_ str:String) -> Bool {
+    
+    var left = 0
+    
+    for char in str {
+      
+      if char == Character("(") {
+        
+        left += 1
+      }
+      
+      if char == Character(")") {
+        
+        left -= 1
+      }
+      
+      if left < 0 {
+        
+        return false
+      }
+    }
+    
+    return left == 0
+  }
+  
+  func removeInvalidParentheses(_ s: String) -> [String] {
+    
+    var results:[String] = []
+    
+    if isValid(s) {
+      
+      return [s]
+    }
+    
+    let mustRemove = findInvalid(s)
+    
+    removeAndCheck(s, start:0, left: mustRemove.left, right: mustRemove.right, &results)
+    
+    return results
+  }
+  
+  func removeAndCheck(_ str:String, start:Int, left:Int, right:Int, _ results:inout [String]) {
+    
+    if left == 0 && right == 0 {
+      
+      if isValid(str) {
+        
+        results.append(str)
+      }
+      
+      return
+    }
+    
+    for i in start..<str.count {
+      
+      let index = str.index(str.startIndex, offsetBy: i)
+      
+      let next = str.index(after: index)
+      
+      if i != start {
+        
+        let prev = str.index(before: index)
+        
+        if str[index] == str[prev] {
+          
+          continue
+        }
+      }
+      
+      let char = str[index]
+      
+      if char == Character("(") && left > 0 {
+        
+        let substr = String(str[str.startIndex..<index] + str[next...])
+        
+        removeAndCheck(substr, start:i, left: left - 1, right: right , &results)
+      }
+      
+      if char == Character(")") && right > 0 {
+        
+        let substr = String(str[str.startIndex..<index] + str[next...])
+        
+        removeAndCheck(substr, start:i, left: left, right: right - 1, &results)
+      }
+    }
+  }
+  
+  func findInvalid(_ str:String) -> (left:Int, right:Int) {
+    
+    var cnt1 = 0, cnt2 = 0
+    
+    for char in str {
+      
+      if char == Character("(") {
+        
+        cnt1 += 1
+      }
+      
+      if cnt1 == 0 {
+      
+        if char == Character(")") {
+          
+          cnt2 += 1
+        }
+      }
+      else {
+        
+        if char == Character(")") {
+          
+          cnt1 -= 1
+        }
+      }
+    }
+    
+    return (cnt1, cnt2)
+  }
 }

@@ -14,11 +14,13 @@ class ViewController: UIViewController {
     
     super.viewDidLoad()
     
-    let solution = WordSearch()
+    let solution = Normal()
     
-    let p = solution.partition("aab")
+    print(Int32.min)
     
-    print(p)
+    var d = solution.lengthOfLIS([1,3,6,7,9,4,10,5,6])
+    
+    print(d)
   }
   
   override func didReceiveMemoryWarning() {
